@@ -8,15 +8,28 @@ dotenv.config();
 const app = express();
 
 // ✅ Allow frontend access (important for Vercel)
+
+
+// Allow only your frontend domain (Vercel)
+const allowedOrigins = [
+  "https://finaxx.vercel.app", // your live frontend URL
+  "http://localhost:5173",     // for local testing (optional)
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173", // local frontend
-      "https://your-vercel-app.vercel.app" // <-- replace with your actual Vercel URL
-    ],
-    methods: ["GET", "POST"],
+    origin: function (origin, callback) {
+      // allow requests with no origin (like mobile apps or curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
+
 
 app.use(express.json());
 
