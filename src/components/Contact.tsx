@@ -14,7 +14,8 @@ const Contact = () => {
 
 
     try {
-    const res = await fetch(`https://abhiash-3.onrender.com/api/contact`, {
+const res = await fetch(`https://abhiash-3.onrender.com/api/contact`
+, {
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
