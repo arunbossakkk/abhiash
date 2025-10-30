@@ -8,7 +8,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+   
+  "start": "node Server/index.js"
+}
+
   },
   "keywords": [],
   "author": "",
