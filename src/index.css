@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 60% 96%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 215 40% 15%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 215 45% 25%;
+
+    --secondary: 210 20% 92%;
+    --secondary-foreground: 215 40% 15%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 43 95% 58%;
+    --accent-foreground: 215 40% 15%;
+    --accent-glow: 43 100% 65%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 215 40% 15%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(215 40% 15%) 0%, hsl(215 45% 25%) 50%, hsl(220 38% 35%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(43 95% 58%) 0%, hsl(43 100% 65%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+
+    --shadow-elegant: 0 10px 40px -10px hsl(215 40% 15% / 0.2);
+    --shadow-glow: 0 0 40px hsl(43 95% 58% / 0.3);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 260 40% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 35% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 35% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 20% 95%;
+    --primary-foreground: 215 40% 8%;
+    --primary-glow: 210 25% 85%;
+
+    --secondary: 215 30% 18%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 215 30% 15%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 43 95% 58%;
+    --accent-foreground: 215 40% 8%;
+    --accent-glow: 43 100% 65%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 215 30% 20%;
+    --input: 215 30% 20%;
+    --ring: 210 20% 95%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(215 40% 8%) 0%, hsl(215 38% 15%) 50%, hsl(220 35% 22%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(215 40% 8%) 0%, hsl(215 35% 10%) 100%);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Boom animation for landing page */
+@keyframes boom-in {
+  0% {
+    transform: translateY(-200px) scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-boom-in {
+  animation: boom-in 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
