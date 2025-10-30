@@ -14,13 +14,11 @@ const Contact = () => {
 
 
     try {
-const res = await fetch(`https://abhiash-3.onrender.com/api/contact`
-, {
-
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, mobile, message }),
-      });
+const res = await fetch("https://abhiash-3.onrender.com/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, mobile, message }),
+});
 
       const data = await res.json();
       if (res.ok) {
