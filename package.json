@@ -9,10 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "node server/index.js",
-   
-  "start": "node Server/index.js"
-
-
+    "start": "node Server/index.js"
   },
   "keywords": [],
   "author": "",
